@@ -23,6 +23,7 @@ Proximus is a web application designed to visualize exoplanets and predict their
 
 1.  **Clone the repository**:
     ```bash
+
     git clone https://github.com/yourusername/proximus-exoplanet.git
     cd proximus-exoplanet
     ```
@@ -48,6 +49,7 @@ Proximus is a web application designed to visualize exoplanets and predict their
     Start the Flask development server.
     ```bash
     python app.py
+
     ```
     The application will be accessible at `http://localhost:5001`.
 
@@ -56,4 +58,11 @@ Proximus is a web application designed to visualize exoplanets and predict their
 *   **Data Source**: NASA Exoplanet Archive
 *   **Planets Analyzed**: 5,500+
 *   **Model Accuracy**: ~75% (on test set)
+
+## App Demo
+<img width="223" height="454" alt="Screenshot 2025-11-21 at 2 00 28 AM" src="https://github.com/user-attachments/assets/f104deb7-fbbb-4854-9fc3-0d317f06c1f2" />
+<img width="203" height="414" alt="Screenshot 2025-11-21 at 2 00 58 AM" src="https://github.com/user-attachments/assets/9523e6d1-0882-4049-a5f9-23c2af8ba636" />
+<img width="203" height="414" alt="Screenshot 2025-11-21 at 2 01 44 AM" src="https://github.com/user-attachments/assets/cbc5a40d-8cd4-4023-aa8f-92d88f1be0dc" />
+<img width="203" height="414" alt="Screenshot 2025-11-21 at 2 02 57 AM" src="https://github.com/user-attachments/assets/c86385a8-1e12-4d57-a8f9-0383554133c7" />
+
 
