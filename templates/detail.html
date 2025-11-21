@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="animate-in">
+    <a href="/" style="opacity: 0.6; font-size: 0.9rem;">&larr; Back to Home</a>
+    <h1 style="margin-top: 1rem;">{{ planet.pl_name }}</h1>
+    
+    <div class="grid" style="grid-template-columns: 1fr 1fr; align-items: center;">
+        <div>
+            <div class="planet-visual">
+                <!-- Placeholder for Matplotlib Image or Three.js -->
+                <img src="{{ url_for('static', filename='generated/' + planet.pl_name + '.png') }}" 
+                     alt="{{ planet.pl_name }}" 
+                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: none;"
+                     onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
+            </div>
+        </div>
+        
+        <div>
+            <div class="card">
+                <h2>Planet Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">Radius</div>
+                        <div class="stat-value">{{ planet.pl_rade }} x Earth</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Equilibrium Temp</div>
+                        <div class="stat-value">{{ planet.pl_eqt }} K</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Insolation Flux</div>
+                        <div class="stat-value">{{ planet.pl_insol }} x Earth</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Star Temp</div>
+                        <div class="stat-value">{{ planet.st_teff }} K</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Distance</div>
+                        <div class="stat-value">{{ planet.sy_dist }} pc</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <h3>Habitability Analysis</h3>
+                    <p>Based on the parameters, this planet is being analyzed...</p>
+                    <!-- We could add a dynamic prediction here if we wanted -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

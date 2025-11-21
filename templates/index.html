@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero animate-in">
+    <h1>Explore the <span class="accent">Unknown</span></h1>
+    <p>Discover exoplanets beyond our solar system and analyze their potential for life.</p>
+</div>
+
+<h2 class="animate-in" style="animation-delay: 0.2s">Featured Exoplanets</h2>
+<div class="grid animate-in" style="animation-delay: 0.4s">
+    {% for planet in planets %}
+    <a href="/planet/{{ planet.pl_name }}" class="card">
+        <h3>{{ planet.pl_name }}</h3>
+        <p>Radius: {{ planet.pl_rade }} x Earth</p>
+        <p>Temp: {{ planet.pl_eqt }} K</p>
+        <div style="margin-top: 1rem; color: var(--accent-color); font-size: 0.9rem;">Explore &rarr;</div>
+    </a>
+    {% endfor %}
+</div>
+
+<div class="card animate-in" style="margin-top: 4rem; animation-delay: 0.6s">
+    <h2>Project Statistics</h2>
+    <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="stat-item">
+            <div class="stat-label">Total Planets Analyzed</div>
+            <div class="stat-value">5,500+</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-label">Model Accuracy</div>
+            <div class="stat-value">75%</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-label">Data Source</div>
+            <div class="stat-value">NASA Archive</div>
+        </div>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.9rem;">
+        *Accuracy based on habitability classification training on confirmed exoplanet data.
+    </p>
+</div>
+{% endblock %}

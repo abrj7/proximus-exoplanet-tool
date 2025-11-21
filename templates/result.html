@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="animate-in" style="text-align: center; max-width: 800px; margin: 0 auto;">
+    <h1>Analysis Result</h1>
+    
+    <div class="card" style="margin-top: 2rem;">
+        <h2 id="resultTitle">Analyzing...</h2>
+        <div id="probabilityBar" style="width: 100%; height: 10px; background: #333; border-radius: 5px; margin: 1rem 0; overflow: hidden;">
+            <div id="probFill" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 1s;"></div>
+        </div>
+        <p id="probText" style="font-size: 1.2rem;"></p>
+        
+        <div style="margin-top: 2rem;">
+            <a href="/create" class="btn">Create Another</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const prediction = params.get('prediction');
+    const prob = parseFloat(params.get('prob'));
+    const msg = params.get('msg');
+    
+    document.getElementById('resultTitle').innerText = msg;
+    document.getElementById('probText').innerText = `Habitability Score: ${(prob * 100).toFixed(1)}%`;
+    
+    setTimeout(() => {
+        document.getElementById('probFill').style.width = `${prob * 100}%`;
+        if (prediction == '1') {
+            document.getElementById('probFill').style.backgroundColor = '#4caf50'; // Green
+        } else {
+            document.getElementById('probFill').style.backgroundColor = '#f44336'; // Red
+        }
+    }, 100);
+</script>
+{% endblock %}
