@@ -53,11 +53,6 @@ Proximus is a web application designed to visualize exoplanets and predict their
     ```
     The application will be accessible at `http://localhost:5001`.
 
-## Project Statistics
-
-*   **Data Source**: NASA Exoplanet Archive
-*   **Planets Analyzed**: 5,500+
-*   **Model Accuracy**: ~75% (on test set)
 
 ## App Demo
 <img width="223" height="454" alt="Screenshot 2025-11-21 at 2 00 28 AM" src="https://github.com/user-attachments/assets/f104deb7-fbbb-4854-9fc3-0d317f06c1f2" />
